@@ -57,13 +57,13 @@ jobs:
 
           - [View Application](index.html) (requires backend)
           - [Deployment Information](deployment-info.html)
-          - [GitHub Repository](https://github.com/YOUR_USERNAME/shopping-graph)
+          - [GitHub Repository](https://github.com/jating06/shopping-graph)
 
           ## 📚 Documentation
 
-          - [Quick Start Guide](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/QUICKSTART.md)
-          - [Full Deployment Guide](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/DEPLOYMENT.md)
-          - [Troubleshooting](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/TROUBLESHOOTING.md)
+          - [Quick Start Guide](https://github.com/jating06/shopping-graph/blob/main/QUICKSTART.md)
+          - [Full Deployment Guide](https://github.com/jating06/shopping-graph/blob/main/DEPLOYMENT.md)
+          - [Troubleshooting](https://github.com/jating06/shopping-graph/blob/main/TROUBLESHOOTING.md)
 
           ## 🔧 Backend Deployment
 
@@ -74,7 +74,7 @@ jobs:
           - **Render**: [render.com](https://render.com)
           - **Fly.io**: [fly.io](https://fly.io)
 
-          See the [Deployment Guide](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/DEPLOYMENT.md) for detailed instructions.
+          See the [Deployment Guide](https://github.com/jating06/shopping-graph/blob/main/DEPLOYMENT.md) for detailed instructions.
 
           ---
 
@@ -177,12 +177,12 @@ npm start</pre>
             <pre>const WS_URL = 'wss://your-backend-url.com';</pre>
 
             <h2>📚 Documentation</h2>
-            <p>For full documentation, visit the <a href="https://github.com/YOUR_USERNAME/shopping-graph" target="_blank">GitHub Repository</a></p>
+            <p>For full documentation, visit the <a href="https://github.com/jating06/shopping-graph" target="_blank">GitHub Repository</a></p>
 
             <h2>🔗 Links</h2>
             <ul>
               <li><a href="index.html">View Application (requires backend)</a></li>
-              <li><a href="https://github.com/YOUR_USERNAME/shopping-graph" target="_blank">GitHub Repository</a></li>
+              <li><a href="https://github.com/jating06/shopping-graph" target="_blank">GitHub Repository</a></li>
             </ul>
           </body>
           </html>

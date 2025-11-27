@@ -57,7 +57,7 @@ This repository includes a GitHub Actions workflow for automatic deployment to G
 
 3. Your site will be available at:
    ```
-   https://YOUR_USERNAME.github.io/shopping-graph/
+   https://jating06.github.io/shopping-graph/
    ```
 
 **Note:** The frontend alone won't work without a backend. You need to deploy the backend separately (see [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions).

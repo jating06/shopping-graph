@@ -6,7 +6,7 @@ Get your Shopping Graph application up and running in minutes!
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/shopping-graph.git
+git clone https://github.com/jating06/shopping-graph.git
 cd shopping-graph
 
 # 2. Install dependencies
@@ -88,7 +88,7 @@ lakme-enrich-matte-lipstick---shade-wm10-47g-t1899xdfjvvt
 3. **Wait for deployment:**
    - Check the "Actions" tab on GitHub
    - Deployment takes ~2 minutes
-   - Your site: `https://YOUR_USERNAME.github.io/shopping-graph/`
+   - Your site: `https://jating06.github.io/shopping-graph/`
 
 4. **Deploy backend separately:**
    - See [DEPLOYMENT.md](DEPLOYMENT.md) for backend options

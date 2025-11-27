@@ -9,7 +9,20 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-app.use(cors());
+// CORS configuration for GitHub Pages and other deployments
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? [
+        'https://jating06.github.io',
+        /\.github\.io$/,
+        'http://localhost:3001',
+        'http://localhost:3000'
+      ]
+    : '*', // Allow all origins in development
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static('public'));
 
