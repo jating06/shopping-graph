@@ -331,9 +331,12 @@ function updateStats() {
 
 // Connect WebSocket
 function connectWebSocket() {
-  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-  const wsUrl = `${protocol}//${window.location.host}`;
+  // Use CONFIG if available, otherwise fallback to local
+  const wsUrl = typeof CONFIG !== 'undefined' 
+    ? CONFIG.getWebSocketUrl() 
+    : `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`;
   
+  console.log('Connecting to WebSocket:', wsUrl);
   ws = new WebSocket(wsUrl);
 
   ws.onopen = () => {
