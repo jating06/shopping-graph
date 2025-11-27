@@ -35,7 +35,51 @@ jobs:
         run: mkdir -p _site
 
       - name: Copy public files
-        run: cp -r public/* _site/
+        run: |
+          cp -r public/* _site/
+          cp public/.nojekyll _site/ 2>/dev/null || true
+
+      - name: Create README for GitHub Pages
+        run: |
+          cat > _site/README.md << 'EOF'
+          # Shopping Graph - Live Product Price Tracker
+
+          🎉 **Successfully deployed to GitHub Pages!**
+
+          ## ⚠️ Important Notice
+
+          This is a **static frontend deployment**. To use the full application, you need to:
+
+          1. Deploy the backend server separately
+          2. Update the WebSocket URL in `config.js`
+
+          ## 🚀 Quick Links
+
+          - [View Application](index.html) (requires backend)
+          - [Deployment Information](deployment-info.html)
+          - [GitHub Repository](https://github.com/YOUR_USERNAME/shopping-graph)
+
+          ## 📚 Documentation
+
+          - [Quick Start Guide](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/QUICKSTART.md)
+          - [Full Deployment Guide](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/DEPLOYMENT.md)
+          - [Troubleshooting](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/TROUBLESHOOTING.md)
+
+          ## 🔧 Backend Deployment
+
+          Choose a platform to deploy the backend:
+
+          - **Heroku**: [heroku.com](https://heroku.com)
+          - **Railway**: [railway.app](https://railway.app)
+          - **Render**: [render.com](https://render.com)
+          - **Fly.io**: [fly.io](https://fly.io)
+
+          See the [Deployment Guide](https://github.com/YOUR_USERNAME/shopping-graph/blob/main/DEPLOYMENT.md) for detailed instructions.
+
+          ---
+
+          Built with ❤️ using Node.js, Express, WebSocket, and Chart.js
+          EOF
 
       - name: Create deployment info
         run: |

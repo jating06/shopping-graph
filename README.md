@@ -21,6 +21,8 @@ npm install
 
 ## Usage
 
+### Local Development
+
 1. Start the server:
 ```bash
 npm start
@@ -33,8 +35,36 @@ npm run dev
 
 2. Open your browser and navigate to:
 ```
-http://localhost:3000
+http://localhost:3001
 ```
+
+### Deployment
+
+#### GitHub Pages (Frontend)
+
+This repository includes a GitHub Actions workflow for automatic deployment to GitHub Pages.
+
+**To deploy:**
+
+1. Enable GitHub Pages in your repository:
+   - Go to Settings → Pages
+   - Select "GitHub Actions" as the source
+
+2. Push to main branch:
+   ```bash
+   git push origin main
+   ```
+
+3. Your site will be available at:
+   ```
+   https://YOUR_USERNAME.github.io/shopping-graph/
+   ```
+
+**Note:** The frontend alone won't work without a backend. You need to deploy the backend separately (see [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions).
+
+#### Full Deployment
+
+For complete deployment instructions including backend hosting options (Heroku, Railway, Render, Fly.io), see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 3. **Option A - Demo Mode (Recommended for Testing):**
    - Check the "Demo Mode" checkbox
