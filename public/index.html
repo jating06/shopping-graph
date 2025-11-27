@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Price Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Live Product Price Tracker</h1>
+      <p class="subtitle">Track Tira product prices in real-time</p>
+    </header>
+
+    <div class="control-panel">
+      <div class="input-group">
+        <label for="productSlug">Product Slug (for Real API mode):</label>
+        <input 
+          type="text" 
+          id="productSlug" 
+          placeholder="Enter product slug from tiraz5.de"
+          value="lakme-enrich-matte-lipstick---shade-wm10-47g-t1899xdfjvvt"
+        >
+        <small style="color: #888; margin-top: 5px; display: block;">
+          💡 Tip: Use Demo Mode (checked by default) to see the graph working immediately!
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label for="pincode">Pincode:</label>
+        <input 
+          type="text" 
+          id="pincode" 
+          placeholder="Enter pincode (e.g., 110009)"
+          value="110009"
+          pattern="[0-9]{6}"
+          maxlength="6"
+        >
+        <small style="color: #888; margin-top: 5px; display: block;">
+          📍 Enter your 6-digit pincode to check product availability
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label for="updateInterval">Update Interval (seconds):</label>
+        <input 
+          type="number" 
+          id="updateInterval" 
+          value="5" 
+          min="2" 
+          max="300"
+        >
+      </div>
+
+      <div class="input-group">
+        <label>
+          <input type="checkbox" id="addVariation" style="width: auto; margin-right: 8px;">
+          Add Price Variation (for real API data visualization)
+        </label>
+        <small style="color: #666; margin-top: 5px; display: block;">
+          Adds ±2% random variation to real API prices for better graph visualization
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>
+          <input type="checkbox" id="demoMode" checked style="width: auto; margin-right: 8px;">
+          Demo Mode (Simulated Data) - Recommended for testing
+        </label>
+        <small style="color: #666; margin-top: 5px; display: block;">
+          ℹ️ Real API returns constant price (₹600). Use Demo Mode to see price variations on the graph.
+        </small>
+      </div>
+
+      <div class="button-group">
+        <button id="startBtn" class="btn btn-primary">Start Tracking</button>
+        <button id="stopBtn" class="btn btn-secondary" disabled>Stop Tracking</button>
+        <button id="clearBtn" class="btn btn-danger">Clear History</button>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <div class="status-item">
+        <span class="label">Status:</span>
+        <span id="status" class="value">Idle</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Current Price:</span>
+        <span id="currentPrice" class="value">-</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Last Update:</span>
+        <span id="lastUpdate" class="value">-</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Data Points:</span>
+        <span id="dataPoints" class="value">0</span>
+      </div>
+    </div>
+
+    <div class="product-info" id="productInfo" style="display: none;">
+      <h3>Product Details</h3>
+      <div id="productDetails"></div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="priceChart"></canvas>
+    </div>
+
+    <div class="price-stats" id="priceStats" style="display: none;">
+      <div class="stat-card">
+        <div class="stat-label">Minimum Price</div>
+        <div class="stat-value" id="minPrice">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Maximum Price</div>
+        <div class="stat-value" id="maxPrice">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Average Price</div>
+        <div class="stat-value" id="avgPrice">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Price Change</div>
+        <div class="stat-value" id="priceChange">-</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
